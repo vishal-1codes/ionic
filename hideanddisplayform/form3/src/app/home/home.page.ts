@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  myname="vishal pawar"
   name="rachit";
   dob=2018;
 
