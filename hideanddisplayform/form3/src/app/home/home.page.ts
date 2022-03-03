@@ -9,6 +9,8 @@ export class HomePage {
   name="rachit";
   dob=2018;
 
+  array1=["vijeta","vishal","vighensh","vinayak","chandrabhaga"]
+
   constructor() {}
 
   getAge(){

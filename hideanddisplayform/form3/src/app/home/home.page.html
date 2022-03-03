@@ -13,5 +13,17 @@
       <ion-col>borth year : {{dob}}</ion-col>
       <ion-col>{{name}} age is {{getAge()}}</ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <div *ngFor="let a of array1">
+          <div>my family member is {{a}}</div>
+        </div>
+        <div>
+          <ol>
+            <li *ngFor="let a of array1">my family member is {{a}}</li>
+          </ol>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
