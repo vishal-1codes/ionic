@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      one way data binding -string interpolation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>Brother Name : {{name}}</ion-col>
+      <ion-col>borth year : {{dob}}</ion-col>
+      <ion-col>{{name}} age is {{getAge()}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

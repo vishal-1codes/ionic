@@ -1,0 +1,7 @@
+{
+  "name": "form1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
