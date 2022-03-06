@@ -10,12 +10,18 @@ export class Tab2Page implements OnInit{
 
   rNo:any;
 
-  constructor( private router:Router) {}
+  constructor( private router:Router) {
+    
+  }
 
   ngOnInit(): void {
     
     this.gNo(),
-    this.refreshPage();
+    // this.logFunction(),
+    // this.refreshPage();
+    console.log("hii video");
+    
+    
   }
 
   goRandom(){
@@ -23,8 +29,8 @@ export class Tab2Page implements OnInit{
   }
 
   gNo(){
-    // this.rNo=Math.floor((Math.random()*100)+1)
-    console.log("gNo() called()");
+    this.rNo=Math.floor((Math.random()*100)+1)
+    console.log("hiiii");
     
   }
 
@@ -38,6 +44,11 @@ export class Tab2Page implements OnInit{
 
   myDefaultMethodToFetchData(){
     this.rNo=Math.floor((Math.random()*100)+1)
+}
+
+logFunction(){
+  console.log("reload page");
+  
 }
 
 
