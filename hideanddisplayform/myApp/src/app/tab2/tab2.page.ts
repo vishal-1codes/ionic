@@ -16,9 +16,10 @@ export class Tab2Page implements OnInit{
 
   ngOnInit(): void {
     
-    this.gNo(),
+    // this.gNo(),
     // this.logFunction(),
     // this.refreshPage();
+    this.myDefaultMethodToFetchData()
     console.log("hii video");
     
     
