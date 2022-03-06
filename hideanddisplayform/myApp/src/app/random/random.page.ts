@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandomPage implements OnInit {
 
+  random:any;
+
   constructor() { }
 
   ngOnInit() {
+    this.genrateRandomNumber();
+  }
+
+  genrateRandomNumber(){
+    this.random=Math.floor((Math.random() * 100) + 1);
+    console.log("-----number created",this.random);
+    
   }
 
 }
