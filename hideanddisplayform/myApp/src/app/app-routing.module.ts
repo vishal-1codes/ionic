@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'random',
     loadChildren: () => import('./random/random.module').then( m => m.RandomPageModule)
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./news/news.module').then( m => m.NewsPageModule)
   }
 ];
 @NgModule({

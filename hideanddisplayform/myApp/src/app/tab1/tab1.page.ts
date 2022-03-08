@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,9 @@ export class Tab1Page {
 
 
 
-  constructor() {}
+  constructor(
+    private http:HttpClient
+  ) {}
 
   
 
