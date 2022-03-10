@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-button (click)="goToNew()">NEW PAGE</ion-button>
+  </ion-row>
   <ion-card *ngFor="let e of arrayData">
     <ion-card-header>
       {{e.publishedAt}}
