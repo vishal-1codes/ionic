@@ -11,7 +11,7 @@ port=process.env.PORT || 3000,
 bodyParser=require('body-parser')
 
 //for pass data in query format
-app.use(bodyParser,urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 //for output in json format
 app.use(bodyParser.json());
