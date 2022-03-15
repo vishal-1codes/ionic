@@ -9,7 +9,7 @@ module.exports=function(app){
     .post(vcs.create_a_customer);
 
 
-    app.route('/customer/:customerId')
+    app.route('customer/:customerId')
     .get(vcs.read_a_customer)
     .put(vcs.update_a_customer)
     .delete(vcs.delete_a_customer);

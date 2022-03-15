@@ -1,8 +1,8 @@
 //vcs Server
 
 //for import express
-var express=require('express')
-app=express()
+var express=require('express'),
+app=express(),
 
 //for port
 port=process.env.PORT || 3000,
