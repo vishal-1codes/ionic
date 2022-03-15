@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --exit",
+    "//":"bellow line for start vcs server using npm run vcs",
     "vcs": "nodemon ./servers/vcsServer.js",
     "acme": "nodemon ./servers/acmeServer.js",
     "rts": "nodemon ./servers/rtsServer.js"
