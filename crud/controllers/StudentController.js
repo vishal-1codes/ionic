@@ -8,7 +8,8 @@ const store=(req,res,next)=>{
     let student=new Student({
         sname:req.body.sname,
         semail:req.body.semail,
-        sage:req.body.sage
+        sage:req.body.sage,
+        eage:req.body.eage
     })
     student.save()
     .then(response=>{
@@ -59,6 +60,25 @@ const show=(req,res,next)=>{
     })
 }
 
+//my added
+const showuser=(req,res,next)=>{
+    let findSage=req.params.sage
+    let findEage=req.params.eage
+    //"sage":{"$gt":20,"$te":25}
+    Student.find({"sage":{$gt:req.params.sage,$lt:req.params.eage}})
+    .then(response=>{
+        res.json({
+            response
+        })
+    })
+    .catch(error=>{
+        res.json({
+            message:"An error occured in show"
+        })
+    })
+    
+}
+
 
 //update by id
 
@@ -105,6 +125,6 @@ const destroy=(req,res,next)=>{
 
 
 module.exports={
-    index,store,show,update,destroy
+    index,store,show,update,destroy,showuser
 }
 

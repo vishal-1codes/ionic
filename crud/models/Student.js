@@ -9,7 +9,10 @@ const studentSchema=new Schema({
         type:String
     },
     sage:{
-        type:String
+        type:Number
+    },
+    eage:{
+        type:Number
     }
 },{timestamps:true})
 
