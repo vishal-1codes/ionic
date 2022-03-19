@@ -48,8 +48,9 @@ const findquery=(req,res,next)=>{
     
     // const query={ $text: { $search: req.params.search } };
     // Student.find(query).select({sname:1})
-    const query={semail:{$regex:req.params.search}}
-    Student.find(query).select({sname:1,semail:1})
+    const query1={semail:{$regex:req.params.search}} 
+    const query2={sname:{$regex:req.params.search}} 
+    Student.find({"$or":[query1,query2]}).select({sname:1,semail:1})
     .then(response=>{
         res.json({
             response
