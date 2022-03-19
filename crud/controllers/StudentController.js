@@ -55,8 +55,9 @@ const findquery=(req,res,next)=>{
     //     return isValid
     // })
     // res.send(filteredUsers);
-
-    Student.find()
+    const query={ $text: { $search: "vishal" } };
+    // Student.find(query).select({sname:1})
+    Student.find(query)
     .then(response=>{
         res.json({
             response
