@@ -45,19 +45,10 @@ const index=(req,res,next)=>{
 
 //here we add new query
 const findquery=(req,res,next)=>{
-    // const filters = req.query;
-    // const filteredUsers=students.filter(user=>{
-    //     let isValid=true;
-    //     for(key in filters){
-    //         console.log(key,user[key],filters[key]);
-    //         isValid=isValid && user[key] == filters[key];
-    //     }
-    //     return isValid
-    // })
-    // res.send(filteredUsers);
-    const query={ $text: { $search: "vishal" } };
+    
+    const query={ $text: { $search: req.params.search } };
     // Student.find(query).select({sname:1})
-    Student.find(query)
+    Student.find(query).select({sname:1,semail:1})
     .then(response=>{
         res.json({
             response

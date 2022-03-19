@@ -5,7 +5,7 @@ const StudentController=require('../controllers/StudentController')
 
 router.get('/',StudentController.index)
 router.get('/showuser/:sage/:eage',StudentController.showuser)
-router.get('/findquery',StudentController.findquery)
+router.get('/findquery/:search',StudentController.findquery)
 
 router.post('/show',StudentController.show)
 router.post('/store',StudentController.store)

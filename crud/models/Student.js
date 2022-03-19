@@ -17,7 +17,8 @@ const studentSchema=new Schema({
 },{timestamps:true})
 
 //here we add search for sname and semail 
-studentSchema.index({sname:'text',semail:'text'})
+// studentSchema.index({sname:'text',semail:'text'})
+studentSchema.index({'$**': 'text'})
 
 
 //inside function we write collection name that can be store in mongodeb as students 
