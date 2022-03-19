@@ -43,11 +43,12 @@ const index=(req,res,next)=>{
     })
 }
 
-//here we add new query
+//here we add new query ...only work in space between two world
 const findquery=(req,res,next)=>{
     
-    const query={ $text: { $search: req.params.search } };
+    // const query={ $text: { $search: req.params.search } };
     // Student.find(query).select({sname:1})
+    const query={semail:{$regex:req.params.search}}
     Student.find(query).select({sname:1,semail:1})
     .then(response=>{
         res.json({
