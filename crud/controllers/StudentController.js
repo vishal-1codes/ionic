@@ -43,6 +43,32 @@ const index=(req,res,next)=>{
     })
 }
 
+//here we add new query
+const findquery=(req,res,next)=>{
+    // const filters = req.query;
+    // const filteredUsers=students.filter(user=>{
+    //     let isValid=true;
+    //     for(key in filters){
+    //         console.log(key,user[key],filters[key]);
+    //         isValid=isValid && user[key] == filters[key];
+    //     }
+    //     return isValid
+    // })
+    // res.send(filteredUsers);
+
+    Student.find()
+    .then(response=>{
+        res.json({
+            response
+        })
+    })
+    .catch(error=>{
+        res.json({
+            message:"an error occyred in index"
+        })
+    })
+}
+
 
 //find using id
 const show=(req,res,next)=>{
@@ -125,6 +151,6 @@ const destroy=(req,res,next)=>{
 
 
 module.exports={
-    index,store,show,update,destroy,showuser
+    index,store,show,update,destroy,showuser,findquery
 }
 
