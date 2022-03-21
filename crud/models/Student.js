@@ -13,6 +13,9 @@ const studentSchema=new Schema({
     },
     eage:{
         type:Number
+    },
+    sphone:{
+        type:Number
     }
 },{timestamps:true})
 
