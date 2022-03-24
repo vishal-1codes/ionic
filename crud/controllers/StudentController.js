@@ -82,7 +82,8 @@ const show=(req,res,next)=>{
 
 //use aggegations here
 const showall=(req,res,next)=>{
-    Student.aggregate([{"$match":{"sage":20}}])
+    // Student.aggregate([{"$match":{"sage":20}}])
+    Student.aggregate([{"$match":{"sage":20,"sname":"vishal"}}])
     .then(response=>{
         res.json({
             response
