@@ -80,6 +80,22 @@ const show=(req,res,next)=>{
     })
 }
 
+
+const showall=(req,res,next)=>{
+    Student.find()
+    .then(response=>{
+        res.json({
+            response
+        })
+    })
+    .catch(error=>{
+        res.json({
+            message:"An error occured in showall"
+        })
+    })
+}
+
+
 //my added
 const showuser=(req,res,next)=>{
     let findSage=req.params.sage
@@ -145,6 +161,6 @@ const destroy=(req,res,next)=>{
 
 
 module.exports={
-    index,store,show,update,destroy,showuser,findquery
+    index,store,show,update,destroy,showuser,findquery,showall
 }
 
