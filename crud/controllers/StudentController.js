@@ -80,9 +80,9 @@ const show=(req,res,next)=>{
     })
 }
 
-
+//use aggegations here
 const showall=(req,res,next)=>{
-    Student.find()
+    Student.aggregate([{"$match":{"sage":20}}])
     .then(response=>{
         res.json({
             response
