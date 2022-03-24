@@ -83,7 +83,10 @@ const show=(req,res,next)=>{
 //use aggegations here
 const showall=(req,res,next)=>{
     // Student.aggregate([{"$match":{"sage":20}}])
-    Student.aggregate([{"$match":{"sage":20,"sname":"vishal"}}])
+    // Student.aggregate([{"$match":{"sage":20,"sname":"vishal"}}])
+    // here we get unique value when we use $group , note when we use $group we have to use _id 
+    // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage"}}}])
+    Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage"}}}])
     .then(response=>{
         res.json({
             response
