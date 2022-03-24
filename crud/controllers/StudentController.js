@@ -86,9 +86,11 @@ const showall=(req,res,next)=>{
     // Student.aggregate([{"$match":{"sage":20,"sname":"vishal"}}])
     // here we get unique value when we use $group , note when we use $group we have to use _id 
     // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage"}}}])
-    // if we write more field in $group then we get more combinations 
+    // if we write more field in $group then we get more combinations , we also change filed name eg - sname = myname check bellow query for that we talk
     // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage",sname:"$sname"}}}])
-    Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage",sname:"$sname"}}}])
+    // here we 1st match 20 sage then we only print name of that match data $group only return unique data not repeat any field that can be similar attribute values
+    // Student.aggregate([{"$match":{"sage":20}},{"$group":{_id:{sname:"$sname"}}}])
+    Student.aggregate([{"$match":{"sage":20}},{"$group":{_id:{sname:"$sname"}}}])
     .then(response=>{
         res.json({
             response
