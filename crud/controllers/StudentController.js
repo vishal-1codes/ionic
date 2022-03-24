@@ -90,6 +90,10 @@ const showall=(req,res,next)=>{
     // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage",sname:"$sname"}}}])
     // here we 1st match 20 sage then we only print name of that match data $group only return unique data not repeat any field that can be similar attribute values
     // Student.aggregate([{"$match":{"sage":20}},{"$group":{_id:{sname:"$sname"}}}])
+    //if we pass wrong order in pipeline then we get empty array group then match it is wrong approach
+    //but if we check group stage output document then we match then we get output
+    //1st we match then we group array
+
     Student.aggregate([{"$match":{"sage":20}},{"$group":{_id:{sname:"$sname"}}}])
     .then(response=>{
         res.json({
