@@ -86,7 +86,9 @@ const showall=(req,res,next)=>{
     // Student.aggregate([{"$match":{"sage":20,"sname":"vishal"}}])
     // here we get unique value when we use $group , note when we use $group we have to use _id 
     // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage"}}}])
-    Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage"}}}])
+    // if we write more field in $group then we get more combinations 
+    // Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage",sname:"$sname"}}}])
+    Student.aggregate([{"$group":{_id:{sage:"$sage",eage:"$eage",sname:"$sname"}}}])
     .then(response=>{
         res.json({
             response
