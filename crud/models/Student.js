@@ -18,7 +18,7 @@ const studentSchema=new Schema({
         type:Number
     },
     scolor:{
-        type:Array
+        type:[]
     }
 },{timestamps:true})
 
