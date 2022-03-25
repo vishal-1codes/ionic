@@ -67,8 +67,8 @@ const findquery=(req,res,next)=>{
 
 //find using id
 const show=(req,res,next)=>{
-    let studentID=req.body.studentID
-    Student.findById(studentID)
+    // let studentID=req.body.studentID
+    Student.find({})
     .then(response=>{
         res.json({
             response
