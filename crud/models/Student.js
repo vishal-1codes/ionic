@@ -16,6 +16,9 @@ const studentSchema=new Schema({
     },
     sphone:{
         type:Number
+    },
+    scolor:{
+        type:Array
     }
 },{timestamps:true})
 

@@ -9,7 +9,8 @@ const store=(req,res,next)=>{
         sname:req.body.sname,
         semail:req.body.semail,
         sage:req.body.sage,
-        eage:req.body.eage
+        eage:req.body.eage,
+        scolor:req.body.scolor
     })
     student.save()
     .then(response=>{
