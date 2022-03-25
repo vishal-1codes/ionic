@@ -95,7 +95,7 @@ const showall=(req,res,next)=>{
     //but if we check group stage output document then we match then we get output
     //1st we match then we group array
 
-    Student.aggregate([{"$match":{"sage":20}},{"$group":{_id:{sname:"$sname"}}}])
+    Student.aggregate([{$group:{_id:"$scolor"}}])
     .then(response=>{
         res.json({
             response
