@@ -8,5 +8,16 @@ export class IssueService {
 
   uri="http://localhost:3000"
 
+  
+
   constructor(private http: HttpClient) { }
+
+  getIssues() {
+    return this.http.get(`${this.uri}/api/student`);
+  }
+
+  // getIssueById(id) {
+  //   return this.http.get(`${this.uri}/issues/${id}`);
+  // }
+  
 }
