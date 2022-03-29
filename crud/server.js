@@ -2,6 +2,8 @@ const express=require('express')
 const morgan=require('morgan')
 const mongoose=require('mongoose')
 const bodyParser=require('body-parser')
+//cors for http request
+const cors = require('cors')
 
 
 const StudentRoute=require('./routes/student')
@@ -22,9 +24,17 @@ db.once('open',()=>{
 
 const app=express()
 
+var corsOptions = {
+    origin: 'http://localhost:4200/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+  }
+
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
+
+//use cors
+app.use(cors(corsOptions))
 
 const PORT=process.env.PORT || 3000
 
