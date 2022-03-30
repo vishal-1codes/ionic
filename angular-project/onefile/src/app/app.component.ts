@@ -14,17 +14,19 @@ export class AppComponent {
   title = 'onefile';
 
   constructor(private api:GetStudentService) {
-    api.getStudents().subscribe(value=>{
-      this.studentsData=value
-      console.log("hiiiiii",value);
+    //1st call in constructor
+
+    // api.getStudents().subscribe(value=>{
+    //   this.studentsData=value
+    //   console.log("hiiiiii",value);
       
-    })
+    // })
   }
 
   
 
   ngOnInit() {
-
+    //2nd call in ngOnInit()
     this.api.getStudents().subscribe((data)=>{
     this.studentsData = data;
     console.log("get data in console",data);
@@ -33,8 +35,9 @@ export class AppComponent {
 }
 
   doSomething(){
+    //3rd call in new created function
     console.debug(this.studentsData);
-    console.log("hi vishal");
+    console.log("hi vishal",this.studentsData);
     
   }
 
