@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  otpSent: boolean = false
+phoneNumber = null
+otp = null
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  sendOtp(){}
+signIn(){}
 
 }
