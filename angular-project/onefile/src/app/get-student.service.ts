@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -18,6 +18,12 @@ export class GetStudentService {
   getStudents(){
     return this.http.get('http://localhost:3000/api/student'); 
     }
+
+  getUserByAge(){
+    const url="http://localhost:3000/api/student/showuser"
+    let queryParms=new HttpParams.append("sage",23,"eage",26)
+
+  }
 
   
 
