@@ -11,6 +11,8 @@ import { GetStudentService } from './get-student.service';
 export class AppComponent {
   studentsData :any=[];
 
+  stundetAge:any=[];
+
   title = 'onefile';
 
   constructor(private api:GetStudentService) {
@@ -31,6 +33,14 @@ export class AppComponent {
     this.studentsData = data;
     console.log("get data in console",data);
     this.doSomething()
+
+    this.api.getUserByAge().subscribe((dataE)=>{
+      this.stundetAge=dataE;
+      console.log("get data by age",dataE);
+      
+    })
+
+
 });
 }
 
@@ -39,6 +49,10 @@ export class AppComponent {
     console.debug(this.studentsData);
     console.log("hi vishal",this.studentsData);
     
+  }
+
+  doNathing(){
+
   }
 
 }
