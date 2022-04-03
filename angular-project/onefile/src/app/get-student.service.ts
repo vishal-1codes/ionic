@@ -9,6 +9,9 @@ export class GetStudentService {
 
   picService:any;
 
+  gsage:any=22;
+  geage:any=26;
+
   constructor(private http:HttpClient) {
     
   }
@@ -23,10 +26,15 @@ export class GetStudentService {
 
     const url="http://localhost:3000/api/student/showuser"
     let queryParms=new HttpParams();
-    queryParms=queryParms.append("sage",22)
-    queryParms=queryParms.append("eage",26)
-    return this.http.get(url,{params:queryParms})
+    let sage=22
+    let eage=26
+    // queryParms=queryParms.append("sage",22)
+    // queryParms=queryParms.append("eage",26)
+    // return this.http.get(url,{params:queryParms})
     // let queryParms=new HttpParams.append("sage",23,"eage",26)
+
+    //we can pass parameters as using + sing but "/" is imp
+    return this.http.get(url+"/"+sage+"/"+eage)
 
   }
 
