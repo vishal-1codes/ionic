@@ -46,6 +46,12 @@ export class AppComponent {
     })
 
 
+    this.api.getDataById().subscribe((dataID)=>{
+      console.log("get data of IDDDD",dataID);
+      
+    })
+
+
 });
 }
 
