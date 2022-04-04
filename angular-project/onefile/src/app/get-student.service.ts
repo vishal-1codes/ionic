@@ -12,6 +12,8 @@ export class GetStudentService {
   gsage:any=22;
   geage:any=26;
 
+  testdata:any;
+
   constructor(private http:HttpClient) {
     
   }
@@ -27,7 +29,9 @@ export class GetStudentService {
     const url="http://localhost:3000/api/student/showuser"
     let queryParms=new HttpParams();
     let sage=22
-    let eage=26
+    let eage=this.testdata
+    console.log("get data from compoennt",eage);
+    
     // queryParms=queryParms.append("sage",22)
     // queryParms=queryParms.append("eage",26)
     // return this.http.get(url,{params:queryParms})
@@ -37,6 +41,9 @@ export class GetStudentService {
     return this.http.get(url+"/"+sage+"/"+eage)
 
   }
+
+
+
 
   
 
