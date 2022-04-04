@@ -154,6 +154,23 @@ const update=(req,res,next)=>{
 }
 
 
+//show user by id
+const showById=(req,res,next)=>{
+    let id=req.body._id
+    Student.findById(req.params.userid)
+    .then(response=>{
+        res.json({
+            response
+        })
+    })
+    .catch(error=>{
+        res.json({
+            message:"An error occured in showById"
+        })
+    })
+}
+
+
 
 //delete student
 
@@ -174,6 +191,6 @@ const destroy=(req,res,next)=>{
 
 
 module.exports={
-    index,store,show,update,destroy,showuser,findquery,showall
+    index,store,show,update,destroy,showuser,findquery,showall,showById
 }
 
