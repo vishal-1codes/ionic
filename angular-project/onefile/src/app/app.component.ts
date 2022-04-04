@@ -18,8 +18,13 @@ export class AppComponent {
   //here we pass data to variable
   testDataOne=24;
 
+
+  userID="623423c37deac4498a77239c"
+
   constructor(private api:GetStudentService) {
     this.api.testdata=this.testDataOne
+
+    this.api.idbydata=this.userID
 
     //1st call in constructor
 

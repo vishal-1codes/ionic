@@ -15,6 +15,8 @@ export class GetStudentService {
   //defied here 
   testdata:any;
 
+  idbydata:any;
+
   constructor(private http:HttpClient) {
     
   }
@@ -46,9 +48,13 @@ export class GetStudentService {
 
 
   getDataById(){
+
+    let dataBydd=this.idbydata;
+
     const url="http://localhost:3000/api/student/showById"
 
-    return this.http.get(url+"/"+"62357f5a433ed85707f476a4")
+    // return this.http.get(url+"/"+"62357f5a433ed85707f476a4")
+    return this.http.get(url+"/"+dataBydd)
   }
 
 
