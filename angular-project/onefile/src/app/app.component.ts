@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'onefile';
 
   //here we pass data to variable
-  testDataOne=26;
+  testDataOne=24;
 
   constructor(private api:GetStudentService) {
     this.api.testdata=this.testDataOne
