@@ -81,6 +81,14 @@ const show=(req,res,next)=>{
     })
 }
 
+const showone=function(req,res){
+    Student.find({},(err,data)=>{
+        res.status(200).json(data)
+    })
+}
+
+
+
 //use aggegations here
 const showall=(req,res,next)=>{
     // Student.aggregate([{"$match":{"sage":20}}])
@@ -191,6 +199,6 @@ const destroy=(req,res,next)=>{
 
 
 module.exports={
-    index,store,show,update,destroy,showuser,findquery,showall,showById
+    index,store,show,update,destroy,showuser,findquery,showall,showById,showone
 }
 
