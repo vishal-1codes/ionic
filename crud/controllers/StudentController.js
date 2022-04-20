@@ -81,9 +81,14 @@ const show=(req,res,next)=>{
     })
 }
 
-const showone=function(req,res){
-    Student.find({},(err,data)=>{
-        res.status(200).json(data)
+const showone=(req,res,next)=>{
+    Student.find({},function(err,result){
+        if(!err){
+            console.log(`operation success: ${result}`);
+        }else{
+            console.log(`error ${err}`);
+        }
+        
     })
 }
 
