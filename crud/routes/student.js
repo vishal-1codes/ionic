@@ -8,7 +8,7 @@ router.get('/',StudentController.index)
 router.get('/showuser/:sage/:eage',StudentController.showuser)
 router.get('/findquery/:search',StudentController.findquery)
 router.get('/showall',StudentController.showall)
-router.get('/showone',StudentController.showone)
+// router.get('/showone',StudentController.showone)
 router.get('/showById/:userid',StudentController.showById)
 
 
