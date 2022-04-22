@@ -1,1 +1,23 @@
-register
+<h1>Register</h1>
+
+<!--here we create route and we usse that in server.js file-->
+<form action="/register" method="POST">
+<div>
+    <label for="name">Name</label>
+    <!--for , then server-->
+    <input id="name" name="name" type="text" required>
+</div>
+<div>
+    <label for="email">Email</label>
+    <!--for , then server-->
+    <input id="email" name="email" type="email" required>
+</div>
+<div>
+    <label for="password">Password</label>
+    <!--for , then server-->
+    <input id="password" name="password" type="password" required>
+</div>
+<button type="submit">Register</button>
+</form>
+
+<a href="/login">go to <span style="color: red;">Login</span> page</a>
