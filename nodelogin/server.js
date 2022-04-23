@@ -3,6 +3,11 @@ const app=express()
 const bcrypt=require('bcrypt')
 const expressLayouts=require('express-ejs-layouts')
 
+//passport athentication
+const initializePassport=require('./passport-config')
+initializePassport(passport)
+
+
 //store all data in local variable
 const users=[]
 
