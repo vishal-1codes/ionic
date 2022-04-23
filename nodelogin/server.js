@@ -7,7 +7,9 @@ const expressLayouts=require('express-ejs-layouts')
 
 //passport athentication
 const initializePassport=require('./passport-config')
-initializePassport(passport)
+initializePassport(passport,email=>{
+    return users.find(user=>user.email===email)
+})
 
 
 //store all data in local variable
