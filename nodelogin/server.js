@@ -2,8 +2,10 @@ const express=require('express')
 const app=express()
 const bcrypt=require('bcrypt')
 const passport=require('passport')
+const flash=require('express-flash')
+const session=require('express-session')
 
-const expressLayouts=require('express-ejs-layouts')
+// const expressLayouts=require('express-ejs-layouts')
 
 //passport athentication
 const initializePassport=require('./passport-config')
@@ -25,6 +27,9 @@ app.set('view-engine','ejs')
 
 //we can access form data into req variable inside our post method
 app.use(express.urlencoded({extended:false}))
+
+app.use(flash())
+app.use(session())
 
 app.get("/",(req,res)=>{
     res.render('index.ejs',{name:'vishal'})

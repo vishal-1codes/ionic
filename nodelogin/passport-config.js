@@ -6,7 +6,7 @@ const bcrypt=require(bcrypt)
 function initialize(passport,getUserByEmail){
     const authenticateUser=(email,password,done)=>{
         //get from login page
-        const user =getUserByEmail(email)
+        const user =getUserByEmail (email)
         //here we pass condition
         if(user==null){
             return done(null,false,{message:'No user with that email'})
