@@ -16,7 +16,7 @@ const initializePassport=require('./passport-config')
 initializePassport(
     passport,
     email=> users.find(user=>user.email===email),
-    id => users.find(user=>user.id===id)
+    id => users.find(user=>user.id === id)
 )
 
 
@@ -45,7 +45,7 @@ app.use(passport.session())
 
 
 app.get("/",(req,res)=>{
-    res.render('index.ejs',{name:'vishal'})
+    res.render('index.ejs',{name:req.user.name})
 })
 
 app.get("/login",(req,res)=>{
