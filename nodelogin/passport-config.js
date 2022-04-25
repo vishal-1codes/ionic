@@ -3,7 +3,7 @@ const LocalStrategy=require('passport-local').Strategy
 //here we check user password match with email
 const bcrypt=require('bcrypt')
 
- function initialize(passport,getUserByEmail){
+ function initialize(passport,getUserByEmail,getUserById){
     const authenticateUser=async (email,password,done)=>{
         //get from login page
         const user =getUserByEmail (email)
@@ -28,12 +28,10 @@ const bcrypt=require('bcrypt')
         }
     }
     passport.use(new LocalStrategy({usernameField:'email'},authenticateUser))
-    passport.serializeUser((user,done)=>{
-
-    })
+    passport.serializeUser((user,done)=>done(null,user.id))
     //opposite function
     passport.deserializeUser((id,done)=>{
-        
+       return done(null,getUserById(id))   
     })
 }
 
