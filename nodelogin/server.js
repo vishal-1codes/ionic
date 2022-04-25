@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
+
 const express=require('express')
 const app=express()
 const bcrypt=require('bcrypt')
@@ -29,7 +33,15 @@ app.set('view-engine','ejs')
 app.use(express.urlencoded({extended:false}))
 
 app.use(flash())
-app.use(session())
+app.use(session({
+    secret:process.env.SESSION_SECRET,
+    resave:false,
+    saveUninitialized:false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.get("/",(req,res)=>{
     res.render('index.ejs',{name:'vishal'})
@@ -40,9 +52,11 @@ app.get("/login",(req,res)=>{
 })
 
 //for login page
-app.post("/login",(req,res)=>{
-
-})
+app.post("/login",passport.authenticate('local',{
+    successRedirect:'/',
+    failureRedirect:'/login',
+    failureFlash:true
+}))
 
 app.get("/register",(req,res)=>{
     res.render('register.ejs')
