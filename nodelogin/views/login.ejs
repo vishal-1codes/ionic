@@ -1,5 +1,8 @@
 <h1>Login</h1>
-
+<% if (messages.error) { %>
+    <%= messages.error %>
+    <% } %>
+    
 <!--here we create route and we usse that in server.js file-->
 <form action="/login" method="POST">
 <div>
