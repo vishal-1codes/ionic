@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-css';
   constructor(){
-    console.log(window.getComputedStyle(document.documentElement).getPropertyValue(--text-color))
+    console.log(window.getComputedStyle(document.documentElement).getPropertyValue("--text-color"))
   }
 }

@@ -1,0 +1,35 @@
+
+
+
+:root{
+    --div-background-color:red;
+    --text-color:black;
+    --div-padding:10px;
+    --div-margin:10px;
+}
+
+body{
+    
+    background-color: var(--background-color,pink);
+}
+
+.child{
+    
+    background-color: var(--div-background-color);
+    color:var(--text-color)
+}
+
+.one{
+   
+    --div-background-color:blue;
+}
+
+.one-one{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
+}
+
+.one-two{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
+}
