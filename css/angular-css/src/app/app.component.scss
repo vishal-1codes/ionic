@@ -1,6 +1,13 @@
+//varibale declaire as --nameofvaribale:value;
 :root{
     --div-background-color:red;
     --text-color:black;
     --div-padding:10px;
     --div-margin:10px;
+}
+
+.child{
+    //when we want to use that variable , key:var(--nameofvaribale)
+    background-color: var(--div-background-color);
+    color:var(--text-color)
 }
