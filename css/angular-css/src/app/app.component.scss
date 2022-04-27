@@ -1,4 +1,6 @@
 //varibale declaire as --nameofvaribale:value;
+
+
 :root{
     --div-background-color:red;
     --text-color:black;
@@ -6,8 +8,27 @@
     --div-margin:10px;
 }
 
+body{
+    background-color: var(--background-color,pink);
+}
+
 .child{
     //when we want to use that variable , key:var(--nameofvaribale)
     background-color: var(--div-background-color);
     color:var(--text-color)
+}
+
+.one{
+    //here we overwrite the color of created variable
+    --div-background-color:blue;
+}
+
+.one-one{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
+}
+
+.one-two{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
 }
