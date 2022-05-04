@@ -8,3 +8,8 @@ https://www.freakyjolly.com/slick-carousel-ngx-slick-carousel-example-angular-12
 
 
 https://www.positronx.io/angular-slick-carousel-slider-integration-tutorial/
+
+
+
+//use ngxslickjs moduel
+https://stackblitz.com/edit/ngx-slickjs?file=src%2Fapp%2Fapp.module.ts
