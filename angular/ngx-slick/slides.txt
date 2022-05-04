@@ -5,3 +5,6 @@ npm i ngx-slick-carousel
 -link
 with more features
 https://www.freakyjolly.com/slick-carousel-ngx-slick-carousel-example-angular-12
+
+
+https://www.positronx.io/angular-slick-carousel-slider-integration-tutorial/
