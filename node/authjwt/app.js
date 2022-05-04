@@ -109,13 +109,15 @@ app.post("/login", async (req, res) => {
   });
 
   app.post("/getuser",function (req,res){
+    var abc=[];
+    
     var query={first_name:req.body.first_name}
     User.find(query,function(err,posts){
       if(err) return res.status(500).json({error:unkownError});
       else if(posts) return res.status(200).json({posts})
     })
     console.log("here we get data",query);
-
+ 
   //   User.find(query),(function(err,result){
   //     if(err) throw err;
   //     console.log(result);
