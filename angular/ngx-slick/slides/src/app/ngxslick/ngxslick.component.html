@@ -1,9 +1,9 @@
 <p>ngxslick works!</p>
 
 <div class="container">
-    <div slickContainer #slickController="slick" [slickConfig]="config">
-      <ng-container *ngIf="slickController.initialize">
-      <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10">
+    <div slickContainer #slickController="slick" [slickConfig]="config" >
+      <ng-container *ngIf="slickController.initialize" >
+      <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10" style="padding:0rem 2rem;">
       </ng-container>
     </div>
     

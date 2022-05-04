@@ -13,3 +13,118 @@ https://www.positronx.io/angular-slick-carousel-slider-integration-tutorial/
 
 //use ngxslickjs moduel
 https://stackblitz.com/edit/ngx-slickjs?file=src%2Fapp%2Fapp.module.ts
+
+
+//ngx slick
+https://stackblitz.com/edit/ngx-slickjs?file=src%2Fapp%2Fapp.component.ts
+
+installation 
+
+npm i ngx-slickjs
+
+
+----
+app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SlideoneComponent } from './slideone/slideone.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxslickComponent } from './ngxslick/ngxslick.component';
+import { NormalComponent } from './normal/normal.component';
+import { NgxSlickJsModule } from 'ngx-slickjs'
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SlideoneComponent,
+    NgxslickComponent,
+    NormalComponent
+  ],
+  imports: [
+    BrowserModule,
+    SlickCarouselModule,
+    AppRoutingModule,
+    NgxSlickJsModule.forRoot({
+      links: {
+        jquery: "https://code.jquery.com/jquery-3.4.0.min.js",
+        slickJs: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+        slickCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
+        slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+      }
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+---
+.ts
+
+import { Component, OnInit } from '@angular/core';
+import { Slick } from 'ngx-slickjs';
+
+@Component({
+  selector: 'app-ngxslick',
+  templateUrl: './ngxslick.component.html',
+  styleUrls: ['./ngxslick.component.css']
+})
+export class NgxslickComponent implements OnInit {
+  arrayLength = 10;
+
+  config: Slick.Config = {
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000 
+    }
+
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  getArray(count: number) {
+    return new Array(count)
+  }
+
+}
+
+
+---
+.html
+
+<p>ngxslick works!</p>
+
+<div class="container">
+    <div slickContainer #slickController="slick" [slickConfig]="config" >
+      <ng-container *ngIf="slickController.initialize" >
+      <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10" style="padding:0rem 2rem;">
+      </ng-container>
+    </div>
+    
+    <button (click)="arrayLength = arrayLength - 1">-</button>
+    {{ arrayLength }}
+    <button (click)="arrayLength = arrayLength + 1">+</button>
+    
+    <button (click)="slickController.next()">Next</button>
+    <button (click)="slickController.prev()">Previous</button>
+    <button (click)="slickController.goTo(4)">Go to 4</button>
+    <button (click)="slickController.play()">Play</button>
+    <button (click)="slickController.pause()">Pause</button>
+    <button (click)="slickController.unslick()" [disabled]="!slickController.initialize">Destroy</button>
+    <button (click)="slickController.initSlick()" [disabled]="slickController.initialize">Init</button>
+    </div>
+
+
+-------------------------------------
+custome slides
+
+https://youtu.be/tihuf0iuUhI
