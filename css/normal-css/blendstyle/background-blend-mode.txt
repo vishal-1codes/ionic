@@ -1,0 +1,49 @@
+link of blog
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode
+
+.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="divone" style=" width: 300px;
+    height: 300px;
+    background: url('https://images.unsplash.com/photo-1651683580246-607ce4bb5ebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60')
+    ,url('https://images.unsplash.com/photo-1651600544627-56e075ef5309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60');
+    background-blend-mode: screen;">
+        <img  src="https://images.unsplash.com/photo-1651683580246-607ce4bb5ebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="image here"
+        style="background-blend-mode: hard-light;">
+    </div>
+
+    <div class="div" style="
+        width: 300px;
+        height: 300px;
+        background: url('https://images.unsplash.com/photo-1651683580246-607ce4bb5ebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'),
+        url('https://images.unsplash.com/photo-1651600544627-56e075ef5309?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8Ym84alFLVGFFMFl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60');
+        background-blend-mode:luminosity ;
+    ">
+    <!--screen give hade like effect
+    darken give us contrast like effect , it good for chinese movie poster effect
+    multiply it give us greate effect , it like saturation 
+    overlay is over like dardness of 2 picture , it give more harder image
+    lighten is remove 1st image and more priority to 2nd image
+    color-dodge it like overlay effect but bottom side it work greate
+    color-burn it give sunset like effect
+    hard-light it give natural photo like effect
+    soft-light it create image blur
+    difference its give mcstan like effect more color contrast with dark color mode
+    exclusion light version of difference
+    hue it give pick color effect with greate color fade
+    saturation it ok 
+    color  it same like saturation
+    luminosity it give GTA like color combinations
+-->
+
+    </div>
+</body>
+</html>
