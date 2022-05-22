@@ -227,8 +227,6 @@ console.log("userinfodecrypt data",this.getuserdatadecrypt);
       this.userinfoencrypt = CryptoJS.AES.encrypt(JSON.stringify(this.userdata), encryptSecretKey).toString();
       // console.log("jpencrypt====>",jpencrypt);
       localStorage.setItem("userinfo", this.userinfoencrypt);
-
-
     }else{
       console.log("invalid otp");
       this.msg="Invalid OTP .Please resent otp";
