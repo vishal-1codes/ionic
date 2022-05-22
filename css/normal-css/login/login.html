@@ -1,0 +1,381 @@
+
+<header class="mb-2">
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <img src="../../../assets/logo.png" alt="" class="img-fluid">
+                </div>
+    
+                <div class="col-sm-12 col-md-5 col-lg-5">
+                    <form>
+                        <mat-form-field class="example-full-width">
+                            <div class="input-group">
+                                <input type="search" class="form-control" (keyup)="Searchenterdata($event.target.value)"
+                                  (keyup.enter)="searchTerm($event.target.value)"  placeholder="Search this blog" matInput [matAutocomplete]="auto">
+                                <div class="input-group-append">
+                                    <button class="btn" type="button" (click)="searchclick()">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let option of Searchdata" (click)="Searchtermdata(option)" [value]="option.model">
+                                        {{option.model}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </div>
+                        </mat-form-field>
+                    </form>
+                </div>
+    
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-user-circle"></i>
+                       <span *ngIf="userflagname==false">
+                        <label data-toggle="modal" data-target="#login">Login</label> /
+                        <label data-dismiss="modal" data-toggle="modal"  data-target="#registerpage">Register</label>
+                       </span>
+                       <span *ngIf="userflagname==true">
+                           <label >{{username}}</label>
+                       </span>
+    
+                      
+                    </button>
+    
+                    <span *ngIf="userflagname==true">
+                        <button (click)="logoutUser()">Sign out</button>
+                    </span>
+    
+                    <div class="dropdown">
+                        <!-- <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i> Autodeal
+                        </button> -->
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-lock"></i> My Orders
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-car"></i> My vehicles
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cog"></i> Profile Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <p>
+                        <b>Contact Us: </b>
+                        <a href="tel:9876643210">9876543210</a>
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-youtube-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <nav class="navbar navbar-expand-lg p-0">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        New Cars
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+    
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        buy used cars
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">sell cars</a>
+                                </li>
+    
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        news & blog
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+    
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">service guide</a>
+                                </li>
+    
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        partner with us
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h5>Login or Register for best Autodeal experience</h5>
+                <hr>
+                <!-- <form [formGroup]="otpForm"> -->
+                    <div class="form-group text-left">
+                        <label for="mobile">Mobile Number</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">+91</div>
+                            </div>
+                            <input  type="text" class="form-control " id="loginmobno"
+                                placeholder=""  (keyup)="keyPress($event)" maxlength="10"  [(ngModel)]="newotpno11">
+                        </div>
+                    </div>
+                    <div class="sendotp" id="sendotpbtn">
+                        <button  class="btn btn-primary"  type="button" (click)="otpCall(newotpno11)" data-dismiss="modal"
+                        data-toggle="modal"  data-target="#otppage" id="btnsendotp" disabled>Send OTP</button>
+    
+    
+    <!--                         
+                        <button class="buttoninput {{classactive}}" data-toggle="modal" data-target="#myModal3"
+                        data-dismiss="modal" (click)="btnProceed(popup.prtnr_name)" [style.cursor]="cursorvalue"
+                        id="enter-JP-number">
+                        CONTINUE</button> -->
+                    </div>
+    <!--                    
+                </form> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    <div class="modal fade" id="otppage" tabindex="-1" role="dialog" *ngIf="loginuserflag==true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h5>Login for best Autodeal experience</h5>
+                <hr>
+                <p>OTP has been sent to <a href="#" (click)="displaydiv($event)">{{displayno}} <i class="fas fa-pencil-alt"></i></a></p>
+                <div  id="abc">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">+91</div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter New Number" [(ngModel)]="newotpnotwo" maxlength="10">
+                        <button class="resendotp" (click)="otpCallTwo(newotpnotwo)" >Send OTP</button>
+                        <!--data-toggle="modal"  data-target="#registerpage"-->
+                    </div>
+                </div>
+                <!-- <form [formGroup]="otpPage"> -->
+                    <div *ngIf="registerflag==false">
+                        <div class="form-group text-left">
+                            <label for="otp">OTP Verify</label>
+                            <div class="input-group mb-2">
+                                <!-- <div class="input-group-prepend">
+                                    <div class="input-group-text">+91</div>
+                                </div> -->
+                                <input type="text" class="form-control" id="inlineFormInputGroup"
+                                    placeholder="Please Enter OTP to verify" [(ngModel)]="otpno"  >
+                                    <button class="resendotp" (click)="resendotpCall()" id="resendotpid" >Resend OTP</button>
+                                <!-- <a href="#" class="resend" (click)="otpCall(template2)">Resend OTP</a> -->
+                            </div>
+                        </div>
+                        <button type="button" (click)="otpCallPage()" class="btn btn-primary" data-dismiss="modal"
+                            data-toggle="modal">Verify OTP</button>
+    
+            
+                            <h6>{{msg}}</h6>
+                    </div>
+    
+                    <div *ngIf="registerflag==true">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" 
+                        data-toggle="modal"  data-target="#registerpage">Register Now</button>
+                    </div>
+                    
+    
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+    
+    <!--Register page-->
+    
+    <div class="modal fade" id="registerpage" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="fas fa-times"></span>
+            </button>
+            <h4>Register for best Autodeal experience</h4>
+            <hr>
+            <!-- <p>OTP has been sent to <a href="#">98765643210 <i class="fas fa-pencil-alt"></i></a></p> -->
+            <!-- <form [formGroup]="confirmOTP"> -->
+                <div class="form-group text-left">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" class="form-control" placeholder="Enter your mobile" [(ngModel)]="registerno" >
+                </div>
+                <div class="form-group text-left">
+                    <label for="mobile">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="registername">
+                </div>
+                <div class="form-group text-left">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email" [(ngModel)]="registeremail">
+                </div>
+                <div class="form-group text-left">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" placeholder="Enter your location" [(ngModel)]="registerlocation">
+                </div>
+    
+                <button type="button" class="btn btn-primary" (click)="registerUser()"  data-toggle="modal" data-dismiss="modal"  data-target="#otppage">submit</button>
+    
+                <h6>{{regmsg}}</h6>
+            <!-- </form> -->
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    <!--template start here-->
+    <!-- <ng-template #template2 class="modal-dialog" role="document">
+    <div >
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" (click)="modalRef1?.hide()" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4>Register for best Autodeal experience</h4>
+                <hr>
+                <p>OTP has been sent to <a href="#">98765643210 <i class="fas fa-pencil-alt"></i></a></p>
+                <form [formGroup]="confirmOTP">
+                    <div class="form-group text-left">
+                        <label for="mobile">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="mobile">OTP Verify</label>
+                        <input type="text" class="form-control" placeholder="Please Enter OTP to verify">
+                        <a href="#" class="resend">Resend OTP</a>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="validateOTP()">submit</button>
+    
+                    <h6>OTP has been sent successfully</h6>
+                </form>
+            </div>
+        </div>
+    </div>
+    </ng-template> -->
+    
+    
+    
+    <!-- 
+    <ng-template #template2 class="modal-dialog" role="document">
+    <div >
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" (click)="modalRef1?.hide()" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4>Login for best Autodeal experience</h4>
+                <hr>
+                <p>OTP has been sent to <a href="#">98765643210 <i class="fas fa-pencil-alt"></i></a></p>
+                <form [formGroup]="confirmOTP">
+                    <div class="form-group text-left">
+                        <label for="mobile">OTP Verify</label>
+                        <input type="text" class="form-control" placeholder="Please Enter OTP to verify">
+                        <a href="#" class="resend">Resend OTP</a>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="validateOTP()">submit</button>
+    
+                    <h6>OTP has been sent successfully</h6>
+                </form>
+            </div>
+        </div>
+    </div>
+    </ng-template> -->
+    
+    
+    
