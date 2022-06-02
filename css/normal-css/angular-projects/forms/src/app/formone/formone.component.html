@@ -1,22 +1,30 @@
 <!-- link https://blog.logrocket.com/reactive-form-controls-form-groups-angular/ -->
+<!-- 1st error solve 
+app.module.ts
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+imports: [
+  FormsModule,
+  ReactiveFormsModule
+],
+-->
 <p>formone works!</p>
 <div>
-    <form>
+    <form [formGroup]="contactSection" (ngSubmit)="callingFunction()">
         <div>
-            <label for="name">Name</label>
-            <input type="text" placeholder="Enter ">
+            <label for="name">Name<input type="text" placeholder="Enter Name" formControlName="name" required=""></label>
+            
         </div>
         <div>
-            <label for="email">Email</label>
-            <input type="text" placeholder="Enter Email">
+            <label for="email">Email<input type="text" placeholder="Enter Email" formControlName="email"  required=""></label>
+            
         </div>
         <div>
-            <label for="phonenumber">Phone No</label>
-            <input type="text" placeholder="Enter Phone No">
+            <label for="phonenumber">Phone No<input type="text" placeholder="Enter Phone No" formControlName="phonenumber"  required=""></label>
+            
         </div>
         <div>
-            <label for="location">Location</label>
-            <input type="text" placeholder="Enter Location">
+            <label for="location">Location<input type="text" placeholder="Enter Location" formControlName="location"  required=""></label>
+            
         </div>
         <div>
             <button type="submit" >SUBMIT</button>
