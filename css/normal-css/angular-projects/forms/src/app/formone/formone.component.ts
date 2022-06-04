@@ -14,7 +14,6 @@ export class FormoneComponent implements OnInit {
     phonenumber: new FormControl('',Validators.required),
     location: new FormControl('',Validators.required)
   });
-
   constructor() { }
 
   ngOnInit(): void {
