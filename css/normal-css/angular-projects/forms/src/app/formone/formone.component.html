@@ -9,25 +9,29 @@ imports: [
 -->
 <p>formone works!</p>
 <div>
-    <form [formGroup]="contactSection" (ngSubmit)="callingFunction()">
+    <form class="was-validated" [formGroup]="contactSection" (ngSubmit)="callingFunction()">
         <div>
-            <label for="name">Name<input type="text" placeholder="Enter Name" formControlName="name" required=""></label>
-            
+            <label for="name">Name<input type="text" class="form-control" placeholder="Enter Name" formControlName="name" required=""></label>
+            <!-- <div class="invalid-feedback">Invalid name</div> -->
+            <!-- <div class="valid-feedback">valid</div> -->
         </div>
         <div>
-            <label for="email">Email<input type="text" placeholder="Enter Email" formControlName="email"  required=""></label>
-            
+            <label for="email">Email<input type="text" class="form-control" placeholder="Enter Email" formControlName="email"  required=""></label>
+            <!-- <div class="valid-feedback">valid</div>  -->
+            <!-- <div class="invalid-feedback">Invalid email</div> -->
         </div>
         <div>
-            <label for="phonenumber">Phone No<input type="text" placeholder="Enter Phone No" formControlName="phonenumber"  required=""></label>
-            
+            <label for="phonenumber">Phone No<input type="text" class="form-control" placeholder="Enter Phone No" formControlName="phonenumber"  required=""></label>
+            <!-- <div class="valid-feedback">valid</div>  -->
+            <!-- <div class="invalid-feedback">Invalid mobile number</div> -->
         </div>
         <div>
-            <label for="location">Location<input type="text" placeholder="Enter Location" formControlName="location"  required=""></label>
-            
+            <label for="location">Location<input type="text" class="form-control" placeholder="Enter Location" formControlName="location"  required=""></label>
+            <!-- <div class="valid-feedback">valid</div>  -->
+            <!-- <div class="invalid-feedback">Invalid location</div> -->
         </div>
         <div>
-            <button type="submit" >SUBMIT</button>
+            <button type="submit" [disabled]="contactSection.invalid" disabled>SUBMIT</button>
         </div>
     </form>
 </div>
