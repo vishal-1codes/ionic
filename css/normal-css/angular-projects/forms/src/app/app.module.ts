@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormoneComponent } from './formone/formone.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdwonComponent } from './dropdwon/dropdwon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormoneComponent
+    FormoneComponent,
+    DropdwonComponent
   ],
   imports: [
     BrowserModule,
