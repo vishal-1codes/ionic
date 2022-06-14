@@ -1,38 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-dropdwon',
-  templateUrl: './dropdwon.component.html',
-  styleUrls: ['./dropdwon.component.css']
-})
-export class DropdwonComponent implements OnInit {
+  @Component({
+    selector: 'app-dropdwon',
+    templateUrl: './dropdwon.component.html',
+    styleUrls: ['./dropdwon.component.css']
+  })
+  export class DropdwonComponent implements OnInit {
 
-  //variable section
-  newArray:any=[
-    {carname:'BMW',carModel:'BMW 1'},
-    {carname:'Audi',carModel:'Audi 1'},
-    {carname:'BBT',carModel:'BBT 1'},
-    {carname:'Mahindra',carModel:'Mahindra 1'},
-    {carname:'Tata',carModel:'Tata 1'},
-  ]
+    //variable section
+    newArray:any=[
+      {carname:'BMW',carModel:'BMW 1'},
+      {carname:'Audi',carModel:'Audi 1'},
+      {carname:'BBT',carModel:'BBT 1'},
+      {carname:'Mahindra',carModel:'Mahindra 1'},
+      {carname:'Tata',carModel:'Tata 1'},
+    ]
 
-  newBrands:any=[
-    {bName:'Aone'},
-    {bName:'Bone'},
-    {bName:'Cone'},
-    {bName:'Done'},
-    {bName:'Eone'},
-  ]
+    newBrands:any=[
+      {bName:'Aone'},
+      {bName:'Bone'},
+      {bName:'Cone'},
+      {bName:'Done'},
+      {bName:'Eone'},
+    ]
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+    }
+
+    doSomething(value:any){
+      console.log("select call here",value);
+      
+      
+    }
+
   }
-
-  doSomething(value:any){
-    console.log("select call here",value);
-    
-    
-  }
-
-}
