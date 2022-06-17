@@ -27,10 +27,25 @@
     constructor() { }
 
     ngOnInit(): void {
+      this.createRange()
     }
 
     doSomething(value:any){
       console.log("select call here",value);
+      
+      
+    }
+
+    createRange(){
+      var len=this.newArray.lenght
+      console.log("len of array",len);
+      
+      // for(var i = 1; i <= len; i++){
+      //   console.log("value of array",i);
+      //   console.log("vishal");
+        
+      // }
+      console.log("vishal");
       
       
     }
