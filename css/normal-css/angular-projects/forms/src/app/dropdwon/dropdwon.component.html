@@ -25,10 +25,21 @@ https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select
 </div>
 
 <div>
-    <ul>
+    <!-- <ul>
         <li *ngFor="let i in arrayValue">{{i}}</li>
-    </ul> 
-    <div *ngFor="let i in arrayValue">{{i}}</div>
+    </ul>  -->
+    <p>vishal</p>
+    <div  *ngFor="let product of arrayValue; ">{{product}}</div>
     <button (click)="createRange()">CLICK</button>
+</div>
+
+<div>
+    <p>2nd div</p>
+    <!--this for some time car brand range print in frotend that time we use-->
+    <!-- <li *ngFor='let in of newArray | slice:1; let i = index'>{{i+1}}</li> -->
+
+    <!--this for images counting-->
+    <li *ngFor='let in of newArray; let i = index'>{{i+1}}</li>
+     
 </div>
 

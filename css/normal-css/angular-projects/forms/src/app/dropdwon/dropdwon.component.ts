@@ -30,6 +30,8 @@
 
     ngOnInit(): void {
       this.createRange()
+
+      console.log("arrayvalue inside ngOnIt",this.arrayValue);
     }
 
     doSomething(value:any){
@@ -44,9 +46,11 @@
       for(var i = 1; i <= len; i++){
         console.log("value of array count",i);
         this.arrayValue=i
-        console.log("arrayvalue",this.arrayValue);
         
+        console.log("arrayvalue",this.arrayValue);
       }
     }
+
+    
 
   }
