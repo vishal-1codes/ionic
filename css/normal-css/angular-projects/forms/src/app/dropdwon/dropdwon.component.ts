@@ -8,6 +8,7 @@
   export class DropdwonComponent implements OnInit {
 
     //variable section
+    //div 2
     newArray:any=[
       {carname:'BMW',carModel:'BMW 1'},
       {carname:'Audi',carModel:'Audi 1'},
