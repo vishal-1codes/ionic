@@ -16,6 +16,8 @@
       {carname:'Tata',carModel:'Tata 1'},
     ]
 
+    arrayValue:any=[]
+
     newBrands:any=[
       {bName:'Aone'},
       {bName:'Bone'},
@@ -37,17 +39,14 @@
     }
 
     createRange(){
-      var len=this.newArray.lenght
+      var len=Object.keys(this.newArray).length
       console.log("len of array",len);
-      
-      // for(var i = 1; i <= len; i++){
-      //   console.log("value of array",i);
-      //   console.log("vishal");
+      for(var i = 1; i <= len; i++){
+        console.log("value of array count",i);
+        this.arrayValue=i
+        console.log("arrayvalue",this.arrayValue);
         
-      // }
-      console.log("vishal");
-      
-      
+      }
     }
 
   }

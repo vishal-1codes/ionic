@@ -26,8 +26,9 @@ https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_select
 
 <div>
     <ul>
-        <li *ngFor="let i in newArray(10);">{{i}}</li>
+        <li *ngFor="let i in arrayValue">{{i}}</li>
     </ul> 
+    <div *ngFor="let i in arrayValue">{{i}}</div>
     <button (click)="createRange()">CLICK</button>
 </div>
 
