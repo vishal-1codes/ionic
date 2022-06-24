@@ -22,3 +22,36 @@
   </div>
   
 </div> -->
+
+
+<!-- <div>
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="50"
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+    >
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+    </swiper>
+</div> -->
+
+
+
+<swiper
+      [config]="config"
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+      [navigation]="true"
+      [pagination]="{ clickable: true }"
+      [scrollbar]="{ draggable: true }"
+    >
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>Slide 4</ng-template>
+      <ng-template swiperSlide>Slide 5</ng-template>
+      <ng-template swiperSlide>Slide 6</ng-template>
+      
+    </swiper>
