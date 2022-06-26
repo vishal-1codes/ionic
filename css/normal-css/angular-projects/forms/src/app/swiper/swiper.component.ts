@@ -30,10 +30,13 @@ export class SwiperComponent implements OnInit {
   vishalSlides:SwiperOptions={
     slidesPerView:1,
     spaceBetween:30,
+    //slides and navaigation part work by config file key value declaration , not by html file declairation it have only config file
     navigation:true,
     pagination:{clickable:true},
     scrollbar:{draggable:true}
   }
+
+  vishalPawar:any=["pawar1","pawar2","pawar3","pawar4","pawar5"]
 
   constructor() { }
 

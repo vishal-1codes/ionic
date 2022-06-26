@@ -60,11 +60,7 @@
 
   <swiper
   [config]="vishalSlides"
-  [navigation]="true"
-  [pagination]="{clickable:true}"
-  [scrollbar]="{draggable:true}"
   >
-  <ng-template swiperSlide>vishal 1</ng-template>
-  <ng-template swiperSlide>vishal 2</ng-template>
-  <ng-template swiperSlide>vishal 3</ng-template>
+  <ng-template swiperSlide *ngFor="let i of vishalPawar">{{i}}</ng-template>
+  
   </swiper>
