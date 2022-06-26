@@ -27,6 +27,14 @@ export class SwiperComponent implements OnInit {
     scrollbar: { draggable: true },
   };
 
+  vishalSlides:SwiperOptions={
+    slidesPerView:1,
+    spaceBetween:30,
+    navigation:true,
+    pagination:{clickable:true},
+    scrollbar:{draggable:true}
+  }
+
   constructor() { }
 
   ngOnInit(): void {
