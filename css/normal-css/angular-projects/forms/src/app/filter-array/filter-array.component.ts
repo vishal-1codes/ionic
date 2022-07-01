@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterArrayComponent implements OnInit {
 
+  arr1=[
+    {namea:'vishal',surname:'pawar'},
+    {namea:'vinayak',surname:'pawar'},
+    {namea:'shivam'},
+    {namea:'vighensh',surname:'pawar'},
+    {surname:'tiwari'},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+    var newArr=this.arr1.filter(function(el){
+      return el.surname!==undefined
+    })
+    console.log("get file data",newArr);
   }
 
 }
