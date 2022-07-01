@@ -13,7 +13,11 @@ export class FilterArrayComponent implements OnInit {
     {namea:'shivam'},
     {namea:'vighensh',surname:'pawar'},
     {surname:'tiwari'},
+    {namea:'pawar1'},
+    {namea:'pawar1',surname:'pawar1'},
   ]
+
+  arr2:any=[]
 
   constructor() { }
 
@@ -21,6 +25,7 @@ export class FilterArrayComponent implements OnInit {
     var newArr=this.arr1.filter(function(el){
       return el.surname!==undefined
     })
+    this.arr2=newArr
     console.log("get file data",newArr);
   }
 
